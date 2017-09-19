@@ -430,14 +430,19 @@ img {
 #contents div#contacts ul {
 	list-style: none;
 	margin: 20px 0;
-	padding: 0;
+	white-space: initial;
+	padding: 0px;
+	position: relative
+	
 }
 #contents div#contacts ul li {
 	width: 450px;
+	
 }
 #contents div#contacts ul li p b {
 	margin: 0;
 	text-transform: none;
+	
 }
 
 #services span, #solutions span, #support span {
@@ -448,10 +453,12 @@ img {
 	line-height: 20px;
 	margin: 0 0 20px;
 	text-align: justify;
+	
 }
 #services span a, #solutions span a, #support span a {
 	color: #0e2934;
 	text-decoration: none;
+	
 }
 
 /*------------------------------ Services Page ------------------------------*/
