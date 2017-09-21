@@ -7,6 +7,8 @@
 	<!--[if lte IE 7]>
 		<link rel="stylesheet" href="css/ie.css" type="text/css" charset="utf-8" />	
 	<![endif]-->
+	
+	
 </head>
 
 <body>
@@ -53,20 +55,43 @@ Description:               <textarea placeholder="Enter description here.." rows
  Gender:                      Male:<input type="radio" name="gender" value="male" checked />  Female:<input type="radio" name="gender" value="female" />
  </div>
  <div class="form-group">
- Account Type :         Current<input type="checkbox" name="hobby" value="singing" />  Savings<input type="checkbox" name="hobby" value="singing" />
+ Account Type :         Current<input type="checkbox" name="account" value="current" />  Savings<input type="checkbox" name="account" value="saving" />
   </div>
  <div class="form-group">
  Country :                   <select name="country" class="form-control">
- <option value="IITs" class="form-control">India</option>
- <option value="NITs" selected class="form-control">Canada</option>
- <option value="IIITs" class="form-control">United Kingdom</option>
- <option value="UPTU GOV CLLG" class="form-control">United States of America</option>
+ <option value="India" selected class="form-control">India</option>
+ <option value="Canada"  class="form-control">Canada</option>
+ <option value="United Kingdom" class="form-control">United Kingdom</option>
+ <option value="United States of America" class="form-control">United States of America</option>
  <option value="OTHERS" class="form-control">Others</option>
  </select> 
 </div>
 <div class="form-group">
  <input type="submit" value="Create!" class="btn-primary">
  </div>
+ <?php
+ include "connection.php"
+ 
+  $servername = "localhost";  
+       $username = "root";  
+       $password = "";  
+       $conn = mysql_connect ($servername , $username , $password) or die("unable to connect to host");  
+       $sql = mysql_select_db ('info',$conn) or die("unable to connect to database"); 
+ 
+$first_name=$_POST['First_name'];
+$last_name=$_POST['Last_name'];
+$password=$_POST['Password'];
+$description=$_POST['Description'];
+$gender=$_POST['Gender'];
+$account=$_POST['Account_type'];
+$country=$_POST['Country'];
+
+ 
+
+ 
+mysqli_query($connect "INSERT INTO info(First_name,Last_name,Password,Description,Gender,Account_type,Country)
+				VALUES('$first_name','$last_name',$password,$description,$gender,$account,$country)");
+				?>
 </form>
 
 		</p>
